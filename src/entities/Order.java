@@ -10,14 +10,16 @@ public class Order {
     private Date moment;
     private OrderStatus status;
 
+    private Client client;
     private List<OrderItem> orderItems = new ArrayList<>();
 
     public Order() {
     }
 
-    public Order(Date moment, OrderStatus status) {
+    public Order(Date moment, OrderStatus status, Client client) {
         this.moment = moment;
         this.status = status;
+        this.client = client;
     }
 
     public Date getMoment() {
@@ -38,6 +40,14 @@ public class Order {
 
     public List<OrderItem> getOrderItems() {
         return orderItems;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public void addItem(OrderItem orderItem) {
